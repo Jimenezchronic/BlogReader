@@ -2,6 +2,7 @@ package android.jimenezb.blogreader;
 
 import android.util.Log;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
@@ -35,12 +36,15 @@ public class BlogPostParser {
                 builder.append(line);
             }
 
-            JSONTokener jsontoken = new JSONTokener(builder. toString());
-            jsonObject new JSONObject(JSONTokener)
+            JSONTokener jsonTokener = new JSONTokener(builder. toString());
+            jsonObject = new JSONObject(jsonTokener);
         }
         catch(IOException error){
             Log.e("BlogPostParser", "IOException: " + error);
         }
+        catch(JSONException error){
+           Log.e("BlogPostParser", "JSON Exception: " + error);
+        }
         return jsonObject;
-    }
+    }   
 }
