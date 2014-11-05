@@ -15,10 +15,7 @@ import java.net.URI;
 import java.net.URL;
 
 public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject>{
-    @Override
-    protected void onPostExecute(JSONObject jsonObject) {
-        super.onPostExecute(jsonObject);
-    }
+
 
     @Override
     protected JSONObject doInBackground(Activity... activities) {
@@ -42,6 +39,9 @@ public class BlogPostTask extends AsyncTask<Activity, Void, JSONObject>{
         }
         return jsonObject;
     }
-
+    @Override
+    protected void onPostExecute(JSONObject jsonObject) {
+        super.onPostExecute(jsonObject);
+    }
 
 }
